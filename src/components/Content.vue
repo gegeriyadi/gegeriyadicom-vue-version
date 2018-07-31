@@ -28,6 +28,7 @@ export default {
     methods: {
         getPosts() {
             this.$store.dispatch('getPosts')
+                // .then(res => console.log(res.data))
                 .then(res => this.$store.commit('setContent', res.data))
                 .catch(err => console.log(err))
         }

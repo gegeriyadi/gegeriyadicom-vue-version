@@ -13,9 +13,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import Api from '../Api'
 import Header from './Header.vue'
-  export default {
+
+export default {
     name: 'SinglePage',
       components: {
         Header
@@ -30,7 +31,7 @@ import Header from './Header.vue'
     },
     methods: {
       getSinglePost(idPost) {
-        axios.get('http://gegeriyadi.test/wp-json/wp/v2/posts/' + idPost)
+        Api().get('posts/' + idPost)
           .then(res => this.$store.commit('setContent', res.data))
           .catch(err => console.log(err))
       }

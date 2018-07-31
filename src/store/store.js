@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import Api from '../Api'
 
 Vue.use(Vuex)
 
@@ -10,10 +10,10 @@ export const store = new Vuex.Store({
     },
     actions: {
       getPosts() {
-        return axios.get('http://gegeriyadi.test/wp-json/wp/v2/posts')
+        return Api().get('posts')
       },
-      getSinglePost(id) {
-        return axios.get('http://gegeriyadi.test/wp-json/wp/v2/posts/' + id)
+      getSinglePost( param ) {
+        return Api().get('posts/' + param)
       }
     },
     mutations: {

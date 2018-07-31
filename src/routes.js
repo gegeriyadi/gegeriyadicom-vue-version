@@ -4,7 +4,7 @@ import SinglePage from './components/SinglePage.vue'
 export default [
   {
     path: '/',
-    name: 'home'
+    name: 'home',
     component: HomePage
   },
   {
